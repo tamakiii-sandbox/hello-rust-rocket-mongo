@@ -16,4 +16,7 @@ RUN apt update && apt install -y --no-install-recommends \
 
 RUN rustup default nightly
 
-RUN cargo install cargo-edit cargo-tree
+RUN cargo install cargo-edit cargo-tree cargo-cache
+
+RUN rustup component add rustfmt rust-analysis rust-src rls && \
+    cargo cache --autoclean
