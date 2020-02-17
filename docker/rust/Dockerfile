@@ -10,6 +10,9 @@ FROM production-pseudo AS development
 
 RUN apt update && apt install -y --no-install-recommends \
       git \
+      telnet \
+      dnsutils \
+      net-tools \
       && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
