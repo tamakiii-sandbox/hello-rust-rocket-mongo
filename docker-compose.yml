@@ -8,3 +8,14 @@ services:
     volumes:
       - .:/app
 
+  mongo:
+    build:
+      context: docker/mongo
+      target: ${ENVIRONMENT:-production-pseudo}
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+    volumes:
+      - .:/app
+
