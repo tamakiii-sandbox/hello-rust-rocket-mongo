@@ -1,9 +1,15 @@
 [package]
-name = "tamakiii/hello-rust-rocket-mongo"
-version = "0.1.0"
 authors = ["tamakiii"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+name = "hello-rust-rocket-mongo"
+version = "0.1.0"
 
 [dependencies]
+mongodb = "0.9.1"
+r2d2 = "0.8.8"
+r2d2-mongodb = "0.2.2"
+rocket = "0.4.2"
+rocket_contrib = "0.4.2"
+serde = "1.0.104"
+serde_json = "1.0.48"
+criterion = "0.3.1"

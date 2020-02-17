@@ -14,3 +14,6 @@ RUN apt update && apt install -y --no-install-recommends \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN rustup default nightly
+
+RUN cargo install cargo-edit
