@@ -4,6 +4,10 @@ services:
     build:
       context: docker/rust
       target: ${ENVIRONMENT:-production-pseudo}
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
     working_dir: /app
     volumes:
       - .:/app
