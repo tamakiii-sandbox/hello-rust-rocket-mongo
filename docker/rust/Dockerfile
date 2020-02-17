@@ -16,4 +16,4 @@ RUN apt update && apt install -y --no-install-recommends \
 
 RUN rustup default nightly
 
-RUN cargo install cargo-edit
+RUN cargo install cargo-edit cargo-tree
