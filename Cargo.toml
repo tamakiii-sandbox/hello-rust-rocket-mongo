@@ -9,10 +9,14 @@ mongodb = "0.9.1"
 r2d2 = "0.8.8"
 r2d2-mongodb = "0.2.2"
 rocket = "0.4.2"
-rocket_contrib = "0.4.2"
-serde = "1.0.104"
+serde = { version = "1.0.104", features = ["derive"] }
 serde_json = "1.0.48"
 criterion = "0.3.1"
+
+[dependencies.rocket_contrib]
+version = "0.4.2"
+features = ["json"]
+default-features = false
 
 [replace]
 "cookie:0.11.0" = { git = 'https://github.com/tamakiii/cookie-rs.git', branch = "v0.11.0-update-deps" }
