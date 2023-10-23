@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  rust:
+    build:
+      context: docker/rust
+      target: ${ENVIRONMENT:-production-pseudo}
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  mongo:
+    build:
+      context: docker/mongo
+      target: ${ENVIRONMENT:-production-pseudo}
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: hello
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_USERNAME: usr
+      MONGO_INITDB_PASSWORD: pass
+    volumes:
+      - .:/app
+
